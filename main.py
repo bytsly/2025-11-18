@@ -4,7 +4,7 @@
 
 Copyright (c) 2025 BH2VLF. All rights reserved.
 """
-__version__ = "0.02"
+__version__ = "0.03"
 
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
