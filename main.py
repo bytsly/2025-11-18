@@ -2,6 +2,8 @@
 国服ID申请拒签管理系统
 主程序文件
 """
+__version__ = "0.02"
+
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from datetime import datetime
@@ -11,6 +13,17 @@ import shutil
 from PIL import Image, ImageTk
 import base64
 from io import BytesIO
+import re
+
+
+def increment_version(version_str):
+    """递增版本号，每次增加0.01"""
+    try:
+        current_version = float(version_str)
+        new_version = current_version + 0.01
+        return f"{new_version:.2f}"
+    except ValueError:
+        return version_str
 
 
 class RejectionManagementSystem:
@@ -18,7 +31,7 @@ class RejectionManagementSystem:
     
     def __init__(self, root):
         self.root = root
-        self.root.title("国服ID申请拒签管理")
+        self.root.title(f"国服ID申请拒签管理 v{__version__}")
         self.root.geometry("1400x700")
         
         # 数据存储
@@ -52,6 +65,14 @@ class RejectionManagementSystem:
             font=("Microsoft YaHei", 20, "bold")
         )
         title_label.grid(row=0, column=0, columnspan=4, pady=10)
+        
+        # 版本信息
+        version_label = ttk.Label(
+            main_frame, 
+            text=f"版本: v{__version__}", 
+            font=("Microsoft YaHei", 10)
+        )
+        version_label.grid(row=1, column=0, columnspan=4, pady=2)
         
         # 输入框架
         input_frame = ttk.LabelFrame(main_frame, text="新增记录", padding="10")
