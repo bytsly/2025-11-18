@@ -1,6 +1,8 @@
 """
 国服ID申请拒签管理系统
 主程序文件
+
+Copyright (c) 2025 BH2VLF. All rights reserved.
 """
 __version__ = "0.02"
 
@@ -74,9 +76,17 @@ class RejectionManagementSystem:
         )
         version_label.grid(row=1, column=0, columnspan=4, pady=2)
         
+        # 版权信息
+        copyright_label = ttk.Label(
+            main_frame, 
+            text="Copyright © 2025 BH2VLF. All rights reserved.", 
+            font=("Microsoft YaHei", 8, "italic")
+        )
+        copyright_label.grid(row=2, column=0, columnspan=4, pady=2)
+        
         # 输入框架
         input_frame = ttk.LabelFrame(main_frame, text="新增记录", padding="10")
-        input_frame.grid(row=1, column=0, columnspan=4, sticky=(tk.W, tk.E), pady=10)
+        input_frame.grid(row=3, column=0, columnspan=4, sticky=(tk.W, tk.E), pady=10)
         
         # 呼号
         ttk.Label(input_frame, text="呼号:").grid(row=0, column=0, sticky=tk.W, padx=5, pady=5)

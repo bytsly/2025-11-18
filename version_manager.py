@@ -2,6 +2,8 @@
 """
 版本管理脚本
 用于递增程序版本号
+
+Copyright (c) 2025 BH2VLF. All rights reserved.
 """
 
 import re
