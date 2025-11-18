@@ -76,13 +76,7 @@ class RejectionManagementSystem:
         )
         version_label.grid(row=1, column=0, columnspan=4, pady=2)
         
-        # 版权信息
-        copyright_label = ttk.Label(
-            main_frame, 
-            text="Copyright © 2025 BH2VLF. All rights reserved.", 
-            font=("Microsoft YaHei", 8, "italic")
-        )
-        copyright_label.grid(row=2, column=0, columnspan=4, pady=2)
+        
         
         # 输入框架
         input_frame = ttk.LabelFrame(main_frame, text="新增记录", padding="10")
@@ -178,6 +172,15 @@ class RejectionManagementSystem:
         ttk.Button(action_frame, text="刷新列表", command=self.refresh_table).pack(side=tk.LEFT, padx=5)
         ttk.Button(action_frame, text="导出数据", command=self.export_data).pack(side=tk.LEFT, padx=5)
         ttk.Button(action_frame, text="导入数据", command=self.import_data).pack(side=tk.LEFT, padx=5)
+        
+        # 版权信息（放在窗口底部）
+        copyright_label = ttk.Label(
+            main_frame, 
+            text="Copyright © 2025 BH2VLF. All rights reserved.", 
+            font=("Microsoft YaHei", 8, "italic"),
+            foreground="gray"
+        )
+        copyright_label.grid(row=4, column=0, columnspan=4, pady=5, sticky=tk.S)
         
         # 配置网格权重
         self.root.columnconfigure(0, weight=1)
